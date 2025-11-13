@@ -4,8 +4,7 @@ import { QdrantClient } from '@qdrant/js-client-rest';
 if (!process.env.GEMINI_API_KEY || !process.env.QDRANT_URL 
     || !process.env.QDRANT_API_KEY || !process.env.QDRANT_COLLECTION 
     || !process.env.EMBEDDING_MODEL || !process.env.EMBEDDING_DIM) {
-  console.error('환경변수 누락: GEMINI/QDRANT 값을 설정하세요.');
-  return new Response(JSON.stringify({ error: 'server config error' }), { status: 500 });
+  throw new Error('환경변수 누락');
 }
 
 const THRESHOLD = 0.65;
