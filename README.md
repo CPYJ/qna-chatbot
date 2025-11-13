@@ -6,7 +6,7 @@ Google Gemini 임베딩과 Qdrant 벡터DB를 활용해
 ---
 
 ## 🌐 배포 URL
-> https://your-vercel-app-url.vercel.app  
+> https://qna-chatbot-task.vercel.app/
 
 ---
 
@@ -82,5 +82,6 @@ Q/A 데이터의 질문을 임베딩하여 해당 벡터와 답변을 Qdrant 컬
 3. `route.js`에서 입력 질문을 임베딩 후 Qdrant에 검색  
 4. 가장 유사한 질문을 찾은 후 같이 묶여있는 답변 반환
 5. 답변 화면 출력  
+
 
 
