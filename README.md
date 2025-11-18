@@ -77,9 +77,10 @@ Q/A 데이터의 질문을 임베딩하여 해당 벡터와 답변을 Qdrant 컬
 
 | 파일 | 설명 | 링크 |
 |------|------|------|
-| `/app/api/route.js` | 질문 임베딩 → Qdrant 검색 로직 | [보기](app/api/route.js) |
-| `/scripts/seed.js` | 엑셀 데이터 → Qdrant 초기 시드 업로드 | [보기](scripts/seed.js) |
-| `/app/page.js` | UI 및 사용자 입력 처리 | [보기](app/page.js) |
+| `route.js` | 질문 임베딩 → Qdrant 검색 로직 | [보기](app/api/route.js) |
+| `seed.js` | 엑셀 데이터 → Qdrant 초기 시드 업로드 | [보기](scripts/seed.js) |
+| `page.js` | UI 및 사용자 입력 처리 | [보기](app/page.js) |
+
 
 
 
