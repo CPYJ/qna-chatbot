@@ -60,7 +60,7 @@
 |------|------|------|
 | `route.js` | 질문 임베딩 → Qdrant 검색 로직 | [보기](app/api/route.js) |
 | `seed.js` | 엑셀 데이터 → Qdrant 초기 시드 업로드 | [보기](scripts/seed.js) |
-| `page.js` | UI 및 사용자 입력 처리 | [보기](app/page.js) |
+
 
 
 
