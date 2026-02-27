@@ -50,12 +50,18 @@ export default function Home() {
     setLoading(false);
   }
 
+
+
+
   function handleKeyDown(e) {
     if (e.key === 'Enter' && !e.shiftKey) {
       e.preventDefault();
       ask();
     }
   }
+
+
+
 
   // 🔹 body 스타일 초기화
   useEffect(() => {
@@ -65,6 +71,8 @@ export default function Home() {
     document.body.style.margin = '0';
     document.body.style.overflow = 'hidden';
   }, []);
+
+  
 
   return (
     <main style={{
