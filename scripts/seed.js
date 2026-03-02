@@ -7,7 +7,7 @@ import fs from 'fs';
 // 파일 경로 다루는 라이브러리
 import path from 'path';
 // Qdrant DB 서비스
-import { insertQA } from '../lib/qdrantService.js';
+import { insertQnA } from '../lib/qdrantService.js';
 
 
 // 엑셀 -> Json 변환
@@ -39,7 +39,7 @@ async function run() {
 
     console.log('🚀 Qdrant 업로드 중...');
 
-    const cnt = await insertQA(rows);
+    const cnt = await insertQnA(rows);
     console.log(`✅ 업로드 완료: ${cnt} 건`);
 }
 
