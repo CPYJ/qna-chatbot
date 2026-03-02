@@ -23,6 +23,7 @@ function loadExcel() {
     const sheet = workbook.Sheets[workbook.SheetNames[0]];
 
     // [{q,a}, ... ] 형태로 변환 (행별로 json화. 첫 행은 컬럼 이름화)
+    // excel 컬럼의 대소문자까지 따라감
     return XLSX.utils.sheet_to_json(sheet);
 }
 
