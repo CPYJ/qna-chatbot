@@ -9,27 +9,31 @@ export async function POST(req) {
     // 요청 body에서 질문 꺼내기
     const { question } = await req.json();
 
-    // 질문 없어서 ?. 에서 undefined 처리 된 경우
+    // 질문 없어서 ?. 에서 통째로 undefined 처리 된 경우
     if(!question?.trim()) {
       return Response.json(
-        { error : '질문이 필요합니다.' },
-        { status: 400 }
+        { error : '질문이 필요합니다.' }, // body
+        { status: 400 } // option : 상태코드 설정
       );
     }
 
-    // 검색 실행
+    // 빌문 있으면 검색 실행
     const answer = await searchAnswer(question);
 
     // 검색 결과가 없는 경우
     if(!answer) {
       return Response.json(
-        { answer : '데이터셋에 없는 질문이에요.' },
-        { status : 200 }
+        { answer : '데이터셋에 없는 질문이에요.' }, // body
+        { status : 200 } 
       );
     }
 
-    // 정상 응답
+    // 검색결과 O. 정상 응답
     return Response.json({answer}, {status: 200});
+
+
+
+
 
 
   } catch(err) {  // 어디선가 예외가 터졌을 때
