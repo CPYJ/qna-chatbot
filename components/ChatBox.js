@@ -33,6 +33,7 @@ export default function ChatBox() {
 
         // 응답 body json -> js 객체화
         const data = await res.json();
+        console.log('응답 data : ' , data);
 
         // 챗봇 응답 추가
         setMessages(prev => [
