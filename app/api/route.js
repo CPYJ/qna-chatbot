@@ -8,7 +8,7 @@ export async function POST(req) {
   try{
     // 요청 body에서 질문 꺼내기
     const { question } = await req.json();
-
+    
     // 질문 없어서 ?. 에서 통째로 undefined 처리 된 경우
     if(!question?.trim()) {
       return Response.json(
@@ -17,7 +17,7 @@ export async function POST(req) {
       );
     }
 
-    // 빌문 있으면 검색 실행
+    // 질문 있으면 검색 실행
     const answer = await searchAnswer(question);
 
     // 검색 결과가 없는 경우
