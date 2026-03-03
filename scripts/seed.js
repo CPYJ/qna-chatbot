@@ -16,7 +16,7 @@ function loadExcel() {
     // 엑셀 파일 경로 String
     const filePath = path.join(process.cwd(), 'data/qna_new.xlsx');
 
-    // 엑셀 파일 즉시 읽기               파일 데이터
+    // 엑셀 파일 읽기 -> js 객체로 변환
     const workbook = XLSX.read(fs.readFileSync(filePath));
 
     // 첫번째 시트 선택
