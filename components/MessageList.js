@@ -1,10 +1,13 @@
+// 메시지 리스트 컴포넌트. 화면 출력만 함
+
+
 // 컴포넌트이기 때문에 default         대화배열,  답변 생성중 여부
 export default function MessageList({messages, loading}) {
 
     return (
         <div 
             style={{
-               height: 400,
+                height: 400,
                 overflowY: 'auto', // 스크롤
                 border: '1px solid #ddd',
                 padding: 10,
