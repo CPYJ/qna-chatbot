@@ -1,6 +1,6 @@
 // 입력창 컴포넌트
 
-// 브라우저 기능 사용할 때(event, hook, ...) 필수. 브라우저에서 실행
+// 브라우저 기능 사용할 때(event, hook, fetch ...) 필수. 브라우저에서 실행
 'use client';
 
 import { useState } from "react";
@@ -19,8 +19,18 @@ export default function ChatInput({ onSend, disabled }) {
     }
 
     return (
-        <div>
+         <div style={{
+            display: 'flex',
+            gap: 8
+        }}>
             <input
+                style={{
+                    flex: 1,
+                    padding: '10px',
+                    borderRadius: '8px',
+                    border: '1px solid #ccc'
+                }}
+
                 value={text}
                 // 입력 바뀔 때마마 text를 업데이트 하여 화면에 표시 
                 onChange={(e) => setText(e.target.value)}
@@ -31,7 +41,18 @@ export default function ChatInput({ onSend, disabled }) {
                 }}
                 />
 
-            <button onClick={send} disabled={disabled}>
+            <button
+                style={{
+                padding: '10px 14px',
+                borderRadius: '8px',
+                border: 'none',
+                background: '#2563eb',
+                color: 'white',
+                cursor: 'pointer'
+            }} 
+
+            onClick={send} 
+            disabled={disabled}>
                 보내기
             </button>
 

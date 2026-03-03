@@ -33,7 +33,6 @@ export default function ChatBox() {
 
         // 응답 body json -> js 객체화
         const data = await res.json();
-        console.log('응답 data : ' , data);
 
         // 챗봇 응답 추가
         setMessages(prev => [
@@ -46,7 +45,15 @@ export default function ChatBox() {
     }
 
     return (
-        <div style={{maxWidth: 700, margin: '0 auto'}}>
+        <div style={{
+            width: '40%', 
+            maxWidth: 500,
+            margin: '40px auto',
+            padding: 20,
+            borderRadius: 16,
+            background: 'white',
+            boxShadow: '0 4px 12px rgba(0,0,0,0.1)'
+        }}>
             <h2>💭 RAG 챗봇</h2>
 
             {/* 메시지 창 */}
