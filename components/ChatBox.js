@@ -1,4 +1,6 @@
-// 단순 출력 X, 유저와 상호작용 있을 때 입력.
+// 메시지 창과 입력 창 컴포넌트를 조립하고 연결하는 컴포넌트
+
+// 브라우저 기능 사용할 때(hook, event, 클라이언트 fetch ...) 필수. 브라우저에서 실행
 'use client';
 
 import { useState } from "react";

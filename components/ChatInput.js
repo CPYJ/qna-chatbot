@@ -1,6 +1,6 @@
 // 입력창 컴포넌트
 
-// 사용자의 입력이 있기 때문에 써야함. 화면 출력만 하면 필요 X
+// 브라우저 기능 사용할 때(event, hook, ...) 필수. 브라우저에서 실행
 'use client';
 
 import { useState } from "react";
