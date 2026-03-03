@@ -48,6 +48,7 @@ export default function ChatBox() {
         <div style={{
             width: '40%', 
             maxWidth: 500,
+            minWidth: 300,
             margin: '40px auto',
             padding: 20,
             borderRadius: 16,
