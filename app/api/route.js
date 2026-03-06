@@ -1,6 +1,8 @@
 // 사용자 질문 > 검색 > 응답 반환
 
-// Qdrant 검색
+// LLM 답변 생성 함수
+import { generateAnswer } from "../../lib/llm";
+// Qdrant 검색 함수
 import { searchAnswer } from "../../lib/qdrantService";
 
 export async function POST(req) {
@@ -17,21 +19,23 @@ export async function POST(req) {
       );
     }
 
-    // 질문 있으면 검색 실행
-    const answer = await searchAnswer(question);
+    // 질문 있으면 qdrant 검색 실행 -> 답변 얻어옴
+    // llm에게 전달할 참고정보라 context
+    const context = await searchAnswer(question);
 
     // 검색 결과가 없는 경우
-    if(!answer) {
+    if(!context) {
       return Response.json(
         { answer : '데이터셋에 없는 질문이에요.' }, // body
         { status : 200 } 
       );
     }
 
+    // context가 있는 경우 LLM 답변 생성 요청
+    const answer = await generateAnswer(question, context);
+
     // 검색결과 O. 정상 응답
     return Response.json({answer}, {status: 200});
-
-
 
 
 
