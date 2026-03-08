@@ -64,7 +64,6 @@ export default function ChatBox() {
             width: '40%', 
             maxWidth: 500,
             minWidth: 300,
-            margin: '40px auto',
             padding: 20,
             borderRadius: 16,
             background: 'white',
