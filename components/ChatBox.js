@@ -12,6 +12,13 @@ export default function ChatBox() {
     const [messages, setMessages] = useState([]);
     const [loading, setLoading] = useState(false);
 
+    const examples = [
+        "임베딩이 뭐야?",
+        "환각은 뭐야?",
+        "LLM이 뭐야?",
+        "Next.js는 왜 썼어?"
+    ];
+
     // 사용자 질문 올 경우 처리
     async function ask(question) {
         if(!question.trim()) return;
@@ -45,6 +52,14 @@ export default function ChatBox() {
     }
 
     return (
+
+        <div style={{
+            display : 'flex',
+            justifyContent: 'center',
+            gap: 12
+        }}>
+
+
         <div style={{
             width: '40%', 
             maxWidth: 500,
@@ -68,6 +83,38 @@ export default function ChatBox() {
                 onSend={ask}
                 disabled={loading}
             />
+        </div>
+
+        {/* 예시 질문 출력 */}
+        <div style={{
+            width: 160,
+            marginTop: 40,
+            padding: 16,
+            borderRadius: 12,
+            background: '#ffffff',
+            border: '1px solid #e5e7eb',
+            height: 'fit-content', 
+            boxShadow: '0 2px 6px rgba(0,0,0,0.05)' 
+        }}>
+            <div style={{
+                fontWeight: 600,
+                marginBottom: 10,
+                fontSize: 15
+            }}>
+                예시 질문
+                </div>
+
+            {examples.map((q,i) => (
+                <div key={i} style={{
+                    marginTop:10,
+                    fontSize: 14,
+                    color: '#374151',
+                    lineHeight: 1.5
+                    }}>
+                     • {q}
+                </div>
+            ))}
+            </div>
         </div>
     )
 }
