@@ -1,12 +1,24 @@
 // 메시지 리스트 컴포넌트. 화면 출력만 함
 
+import { useEffect, useRef } from "react";
 
 // 컴포넌트이기 때문에 default         대화배열,  답변 생성중 여부
 export default function MessageList({messages, loading}) {
 
+    // div를 직접 가리키는 변수. 맨 아래 위치를 가리킴
+    const bottomRef = useRef(null);
+
+    // 새 메시지 추가 시 실행
+    useEffect(() => {
+        // bottomRef가 가리키는 객체로 부드럽게 스크롤해서 이동
+        bottomRef.current?.scrollIntoView({behavior: "smooth"});
+     }, [messages.length]);
+    
+
     return (
+        
         <div 
-            style={{
+            style={{ 
                 height: 450,
                 overflowY: 'auto',
                 borderRadius: '12px',
@@ -16,7 +28,8 @@ export default function MessageList({messages, loading}) {
             {/* 메시지 하나씩 role 따라 위치 정해서 출력 */}
             {messages.map((m,i) => {
 
-                const isUser = m.role === 'user'; // true or false
+                // 값 && 타입 비교. 하나라도 다르면 false
+                const isUser = m.role === 'user';
 
                 return (
                     <div
@@ -27,6 +40,8 @@ export default function MessageList({messages, loading}) {
                             margin: '8px 0'
                         }}
                     >
+
+                        {/* 말풍선 */}
                         <div
                             style={{
                             maxWidth: '70%',
@@ -46,6 +61,9 @@ export default function MessageList({messages, loading}) {
 
             {/* loading이 true인 경우 p태그 표시 */}
             {loading && <p>🤖 답변 생성 중...</p>}
+
+            {/* 스크롤 기준점. 새 메시지 생기면 여기로 이동 */}
+            <div ref={bottomRef}></div>
 
         </div>
     );
