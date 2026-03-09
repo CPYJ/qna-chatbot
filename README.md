@@ -2,7 +2,7 @@
 
 > **Vector DB + LLM을 결합한 RAG 기반 FAQ 챗봇**
 
-사용자의 질문을 **임베딩 → Vector DB 검색 → LLM 생성** 구조로 처리하여  
+사용자의 질문을 **임베딩 → Vector DB 검색 → LLM 답변 생성** 구조로 처리하여  
 **검색 기반(RAG) 응답 시스템**을 구현했습니다.
 
 ---
@@ -19,7 +19,7 @@ https://qna-chatbot.vercel.app/
 
 1. FAQ 데이터를 임베딩 후 Vector DB에 저장  
 2. 사용자의 질문을 동일 모델로 임베딩하여 변환  
-3. Qdrant에서 사용자의 질문벡터와 유사한 데이터 검색  
+3. Qdrant에서 사용자의 질문 벡터와 유사한 데이터 검색  
 4. Qdrant 검색 결과를 LLM에게 전달
 5. Gemini가 Qdrant 검색 결과와 사용자의 질문을 참고하여 자연어 답변 생성  
 6. Qdrant 검색 결과가 없는 경우 '데이터셋에 없는 질문이에요' 반환
@@ -32,7 +32,7 @@ https://qna-chatbot.vercel.app/
 |------|------|
 | **Frontend** | Next.js (React) |
 | **Backend** | Next.js Route Handler |
-| **AI / LLM** | Gemini 2.5 flash |
+| **AI / LLM** | Gemini 2.5 Flash |
 | **Vector DB** | Qdrant |
 | **Embedding** | Gemini Embedding |
 | **Deployment** | Vercel |
